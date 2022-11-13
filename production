@@ -1,0 +1,46 @@
+Ici, les porductions minimum des conditions, if, if else, dowhile:
+-/IF{condition}...\FI
+\IF{condition}
+	pop ax
+	const bx,0
+	const dx,if:1:false
+	cmp ax,bx
+	jmpc dx
+;si vrai
+	...
+\FI
+:if:1:false
+
+
+-\IF{condition}
+	pop ax
+	const bx,0
+	const dx,if:1:false
+	cmp ax,bx
+	jmpc dx
+;si vrai
+	...
+	const dx,if:1:after
+	jmp dx
+\ELSE
+	if:1:false
+;si faux
+	...
+\FI
+:if:1:after
+	
+	
+-\dowhile{condition}
+:loop:while:begin:1
+	pop ax
+	const bx,0
+	const dx,loop:while:end:1
+	cmp ax,bx
+	jmpc dx
+;si vrai
+	...
+	const dx,loop:while:begin:1
+	jmp dx
+\OD
+:loop:while:end:1
+

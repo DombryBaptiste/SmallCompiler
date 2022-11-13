@@ -1,0 +1,24 @@
+le but du projet est de lire un algo dans un fichier .tex (latex) puis
+de le transforme en fichier .asm (ASIPRO) mais sans nombre 
+c'est a dire que le fichier obtenu a l'issus ne compileras pas,
+il faudrat une deuxieme passe ou on donnera les valeurs pour que cela fonctionne
+en gros l'algo "test (int x)"
+si x == 0 alors 
+0 sinon
+1 fin si
+
+donnera 
+load ax var:test:x
+const bx 0
+cmp ax,bx
+jmpe zero:x
+print 1
+:zero:x
+print 0
+
+voir dans l'exemple dans Sujet -> Exemple:
+ Le fichier exemple.pdf qui montre l'algo
+ Le fichier puissance.tex qui donne puissance.asm en assembleur
+ et puissance.asm qui donne puissance(2,3).asm quand on l'execute avec a = 2 et b = 3
+ Seul le fichier puissance(2,3).asm compile car le fichier puissance.asm ne repressente seulement l'algo en asm
+
